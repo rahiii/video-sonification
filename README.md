@@ -1,4 +1,4 @@
-# README — Video Motion Sonification Prototype
+# Video Motion Sonification Prototype
 
 This project records a short video from the webcam, extracts motion between frames, and turns that movement into sound. It outputs a WAV audio file and a motion plot.
 
