@@ -24,7 +24,7 @@ venv\Scripts\activate
 
 ### 2. Install required packages
 ```bash
-pip install opencv-contrib-python numpy mediapipe
+pip install opencv-contrib-python numpy mediapipe ultralytics scipy
 ```
 
 ---

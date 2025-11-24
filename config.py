@@ -1,13 +1,27 @@
-# If you want to use the WEBCAM, set this to: None
-# If you want to use a VIDEO, set this to the filename: "video.mp4"
-INPUT_SOURCE = "/Users/rahimitra/Downloads/video_sonification/Samples/KathakDance.mp4" 
-
-# Webcam ID (Only used if INPUT_SOURCE is None)
-CAMERA_ID = 0 
-
+INPUT_SOURCE = None
+CAMERA_ID = 0
 WIDTH = 640
 HEIGHT = 480
-
-TRAIL_DECAY = 0.85      # How fast trails fade (0.0 - 1.0)
-TRAIL_SPEED = 0.15      # How fast new movement appears
-FLOW_SENSITIVITY = 5.0  # Sensitivity to movement
+TRAIL_DECAY = 0.85
+TRAIL_SPEED = 0.15
+FLOW_SENSITIVITY = 5.0
+POSE_MODEL_PATH = "pose_landmarker_full.task"
+SHOW_SKELETON = False
+MAX_PEOPLE = 5
+DETECTION_CONFIDENCE = 0.6
+TRACKING_CONFIDENCE = 0.6
+SR = 22050
+N_FFT = 4096
+HOP_LEN = 512
+N_BINS = N_FFT // 2 + 1
+CIRCLE_OF_FIFTHS = [
+    [130.81, 155.56, 174.61, 196.00, 233.08],
+    [196.00, 233.08, 261.63, 293.66, 349.23],
+    [293.66, 329.63, 369.99, 415.30, 493.88],
+    [440.00, 493.88, 554.37, 587.33, 659.25],
+    [659.25, 739.99, 830.61, 880.00, 987.77],
+    [987.77, 1108.73, 1244.51, 1318.51, 1480.00],
+    [1480.00, 1661.22, 1864.66, 1975.53, 2217.46]
+]
+ENABLE_VISUAL_EFFECTS = True
+ENABLE_ENSEMBLE = False
