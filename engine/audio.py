@@ -5,8 +5,7 @@ import soundfile as sf
 import scipy.ndimage
 import os
 import config
-from moviepy.editor import VideoFileClip, AudioFileClip
-import moviepy.video.fx.all as vfx
+from moviepy import VideoFileClip, AudioFileClip
 
 class AudioEngine:
     def __init__(self):
@@ -334,6 +333,6 @@ class AudioEngine:
             raise FileNotFoundError(f"Video file not found: {video_path}")
         if not os.path.exists(audio_path):
             raise FileNotFoundError(f"Audio file not found: {audio_path}")
-        clip_v = VideoFileClip(video_path).fx(vfx.speedx, final_duration=total_time)
+        clip_v = VideoFileClip(video_path).with_speed_scaled(final_duration=total_time)
         clip_a = AudioFileClip(audio_path)
-        clip_v.set_audio(clip_a).write_videofile(output_path, codec='libx264', audio_codec='aac', verbose=False, logger=None)
+        clip_v.with_audio(clip_a).write_videofile(output_path, codec='libx264', audio_codec='aac', logger=None)
